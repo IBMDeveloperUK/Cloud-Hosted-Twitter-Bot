@@ -12,9 +12,10 @@ Go to the [Twitter Developer Dashboard](https://developer.twitter.com/en/apps) a
 
 Now you have created an app in Twitter, lets code the server :beers:
 
-1. Create a new folder inside your `pkg` directory and call it `twitter_auth`
-2. Inside your `twitter_auth` directory create a file called `twitter_auth.go`
-3. The first thing you need to do is authenticate with twitter and connect to the app you created. To do this, read and add the following code to this file:
+1. Create a new folder called `pkg` in your root directory
+2. Inside this folder create another new folder and call it `twitter_auth`
+3. Inside your `twitter_auth` directory, create a file called `twitter_auth.go`
+4. The first thing you need to do is authenticate with twitter and connect to the app you created. To do this, read and add the following code to this file:
 
 ```go
 package twitterauth
