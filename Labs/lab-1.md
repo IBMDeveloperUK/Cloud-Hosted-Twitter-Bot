@@ -4,9 +4,7 @@ In this very first Lab you will clone the repository of the project to make the 
 
 ### Step 1
 
-// TODO: FIX THIS LINK
-
-Clone [this](./) repository into `$HOME/<user>/go/github.com` and then open the project directory into your preferred editor. (I use [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go) installed from the marketplace)
+Clone [this](https://github.com/IBMDeveloperUK/cloud-hosted-twitter-bot-workshop.git) repository into `$HOME/<user>/go/github.com` and then open the project directory into your preferred editor. (I use [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go) installed from the marketplace)
 
 ### Step 2
 
