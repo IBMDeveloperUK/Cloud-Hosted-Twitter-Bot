@@ -52,7 +52,7 @@ mkdir $HOME/go/src/github.com
 ## Prerequisites
 
 1. Twitter API Keys - These can be obtained by registering for a [developer account](https://developer.twitter.com/en/docs/basics/developer-portal/overview) on Twitter. This is only needed for the final lab and takes ~15minutes to set up
-2. An IDE installed \(GoLand/Visual Studio Code etc\)
+2. An IDE installed (GoLand/Visual Studio Code etc)
 
 ---
 
@@ -64,8 +64,8 @@ mkdir $HOME/go/src/github.com
 - [Lab-4]
 
 [Presentation]: ./presentation/Intro_to_Golang.pdf
-[Lab-0]: ./Labs/lab-0.md
-[Lab-1]: ./Labs/lab-1.md
-[Lab-2]: ./Labs/lab-2.md
-[Lab-3]: ./Labs/lab-3.md
-[Lab-4]: ./Labs/lab-4.md
+[Lab-0]: ./labs/lab-0.md
+[Lab-1]: ./labs/lab-1.md
+[Lab-2]: ./labs/lab-2.md
+[Lab-3]: ./labs/lab-3.md
+[Lab-4]: ./labs/lab-4.md
