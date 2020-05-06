@@ -50,11 +50,11 @@ Create a public application
 
 ![Create Public Application](../images/CreatePublicApp.png)
 
-Make sure the Go runtime is selected and then fill in the detail boxes shown below, indicated with a red arrow. The rest will auto-fill as you type or already be populated with text. The hostname and domain can be left with the defaults already populated.
+Scroll down a little bit and make sure the Go runtime is selected. Once it is selected, fill in the detail boxes shown below, indicated with a red arrow. The rest will auto-fill as you type or already be populated with text. The hostname and domain can be left with the defaults already populated.
 
 ![CF App Details 1](../images/CFAppDetails1.png)
 
-Do not be alarmed at the pricing plan, you will not be exceeding the free allowance with this workshop. "First 186 GB-Hour's free per month for one or more applications built using any of the Community runtimes."
+**Do not be alarmed at the pricing plan, you will not be exceeding the free allowance with this workshop. "First 186 GB-Hour's free per month for one or more applications built using any of the Community runtimes."**
 
 Once all the fields are completed, click create
 
@@ -92,6 +92,6 @@ If the push is successful, your application will be created and you should see i
 
 To see your application running and have it output a joke, go to the main resource page and click on the `Visit App URL`. At the end of the URL append the route you created `/showjoke`
 
-![Running App URL](../images/RunningAppURL.png)
+![Running App URL](./../images/RunningAppURL.png)
 
 The next stage of this workshop will be turning this web app into a twitter bot, continue onto [Lab 4](./lab-4.md)

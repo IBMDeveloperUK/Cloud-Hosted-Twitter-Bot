@@ -165,19 +165,17 @@ This will take you to your resources list. Click on your twitter-bot resource
 
 ![IBM Cloud Resource List](../images/IBMCloudResourceList.png)
 
-Once within your application, go to the runtime section which can be found in the left side menu
+Once within your application, go to the runtime section which can be found in the left side menu and click on the heading `Environment variables`
 
 ![Resouce Overview](../images/ResourceOverview.png)
 
-Click on the heading `Environment variables`
-
-![Env Var Overview](../images/EnvVarOverview.png)
-
-Scroll down to the application variables, add your `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`, `CONSUMER_KEY`, `CONSUMER_SECRET` from Twitter and save the configuration. These can be found in your [Twitter Developer Dashboard](https://developer.twitter.com/en/apps)
+Add your `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`, `CONSUMER_KEY`, `CONSUMER_SECRET` from Twitter and save the configuration. These can be found in your app on your [Twitter Developer Dashboard](https://developer.twitter.com/en/apps)
 
 ![Add Env Vars](../images/AddEnvVars.png)
 
-Now these have been saved, your application will have access to them. Lets try it out?
+Now these have been saved, your application will have authentication. 
+
+Lets try it out?
 
 Click on the "Visit App URL" and append `/tweetjoke` to the end of the URL. This will tweet a random joke and you can check this by looking on your twitter feed!
 
