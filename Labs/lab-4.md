@@ -61,6 +61,7 @@ type Credentials struct {
 }
 
 func GetCredentials() Credentials {
+    // Populating the struct
     creds := Credentials{
         AccessToken:       os.Getenv("ACCESS_TOKEN"),
         AccessTokenSecret: os.Getenv("ACCESS_TOKEN_SECRET"),
@@ -72,13 +73,15 @@ func GetCredentials() Credentials {
 
 /* GetUserClient:
 Input = credentials
-Return = authenticated twitter client, error
+Return = client, error
 */
 func GetUserClient(creds *Credentials) (*twitter.Client, error) {
 
+    // create a new config & token from creds
     config := oauth1.NewConfig(creds.ConsumerKey, creds.ConsumerSecret)
     token := oauth1.NewToken(creds.AccessToken, creds.AccessTokenSecret)
 
+    // create a new http client
     httpClient := config.Client(oauth1.NoContext, token)
     client := twitter.NewClient(httpClient)
 
@@ -87,6 +90,7 @@ func GetUserClient(creds *Credentials) (*twitter.Client, error) {
         IncludeEmail: twitter.Bool(true),
     }
 
+    // verify the user
     user, _, err := client.Accounts.VerifyCredentials(verifyParams)
     if err != nil {
         logr.Error(err)
@@ -110,14 +114,17 @@ func TweetHandler(w http.ResponseWriter, r *http.Request) {
     }
     w.Write([]byte(fmt.Sprintf("The following joke will be tweeted, %s\n", dadJoke)))
 
+    // get twitter credentials
     creds := twitter_auth.GetCredentials()
 
+    // build client
     client, err := twitter_auth.GetUserClient(&creds)
     if err != nil {
         logr.Error("Error getting Twitter Client")
         logr.Error(err)
     }
 
+    // tweet the joke
     tweet, resp, err := client.Statuses.Update(dadJoke, nil)
     if err != nil {
         logr.Error(err)
