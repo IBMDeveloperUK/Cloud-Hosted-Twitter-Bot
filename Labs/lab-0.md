@@ -72,6 +72,8 @@ Login or create an [IBM Cloud](https://cloud.ibm.com/login) account
 
 ## 4. Create a Twitter account
 
+Login or create a [Twitter account](https://twitter.com/?login)
+
 ---
 
 ## 5. IDE
