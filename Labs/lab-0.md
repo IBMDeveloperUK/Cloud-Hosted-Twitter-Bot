@@ -10,7 +10,7 @@ Ubuntu 16.04+
 
 ```bash
 wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
-| bash -s -- --version 1.14.1
+| bash -s -- --version 1.14.2
 ```
 
 macOS
@@ -23,7 +23,7 @@ or
 
 ```bash
 curl https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
-| bash -s -- --version 1.14.1
+| bash -s -- --version 1.14.2
 ```
 
 Once the installation has finished, create a folder called `github.com` inside `$HOME/go/src`. Copy and paste the following command to do this for you.
