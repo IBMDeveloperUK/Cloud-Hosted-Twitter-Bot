@@ -42,7 +42,7 @@ Login to IBM Cloud \(or create an account if you still havent done so\)
 
 ![IBM Cloud Login](../images/IBMCloudLogin.png)
 
-Navigate to the hamburger menu on the left hand side and select "Cloud Foundary"
+Navigate to the hamburger menu in the top left of the window and select "Cloud Foundary" from the menu
 
 ![IBM Cloud Left Panel](../images/IBMCloudLeftPan.png)
 
@@ -73,7 +73,7 @@ applications:
   random-route: true
   memory: 128M
   env:
-    GO_INSTALL_PACKAGE_SPEC: <path to your main.go file on your system> e.g github.com/twitter-bot/cmd
+    GO_INSTALL_PACKAGE_SPEC: <path to your main.go file on your system> e.g github.com/cloud-hosted-twitter-bot-workshop/cmd
 ```
 
 ## Step 4

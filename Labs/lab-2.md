@@ -14,10 +14,14 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-> **Note**: You will also need to add the following import to your code \(this makes the terminal logs look pretty\) :smile:
+> **Note**: You will also need to add the following import to your code (this makes the terminal logs look pretty). To do this, your imports should look like:
 
 ```golang
-logr "github.com/sirupsen/logrus"
+import (
+    "fmt"
+    "net/http"
+    logr "github.com/sirupsen/logrus"
+)
 ```
 
 ### Step 2
@@ -111,8 +115,8 @@ func jokeHandler(w http.ResponseWriter, r *http.Request) {
 ```
 
 ```go
-// Add this line below the existing "/" route 
-r.HandleFunc("/showjoke", jokeHandler
+// Add this line below the existing "/" route
+r.HandleFunc("/showjoke", jokeHandler)
 ```
 
 If you run the code and navigate to `localhost:8080/showjoke` in your browser you should be presented with a randomly generated joke!

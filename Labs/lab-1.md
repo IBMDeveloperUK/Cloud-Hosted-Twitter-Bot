@@ -4,13 +4,23 @@ In this very first Lab you will clone the repository of the project to make the 
 
 ### Step 1
 
-Clone [this](https://github.com/IBMDeveloperUK/cloud-hosted-twitter-bot-workshop.git) repository into `$HOME/<user>/go/github.com` and then open the project directory into your preferred editor. (I use [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go) installed from the marketplace)
+1. Fork this repository and then clone your personal copy into `$HOME/<user>/go/github.com` on your machine.
+![fork repository](./../images/ForkRepo.png)
+1. open the project directory into your preferred editor. (I use [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go) installed from the marketplace).
+2. You will be using the Go Modules to manage imports in this workshop so in the terminal, navigate into the project directory and initialise it. To do this enter the follow commands:
+
+```bash
+go mod init
+```
+```bash
+go mod tidy
+```
 
 ### Step 2
 
 Lets start by making a simple `Hello-World` program.
 
-Open the `main.go` file and add the code below:
+Open the `main.go` file, located in the `cmd` folder and add the code below:
 
 ```golang
 package main

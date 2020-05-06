@@ -57,15 +57,15 @@ mkdir $HOME/go/src/github.com
 ---
 
 - [Presentation]
-- [Lab-0]
-- [Lab-1]
-- [Lab-2]
-- [Lab-3]
-- [Lab-4]
+- [Lab-0-Prerequisites]
+- [Lab-1-Basic-Go-App]
+- [Lab-2-Lets-Get-RESTful]
+- [Lab-3-Up-In-The-Cloud]
+- [Lab-4-Tweet-Tweet]
 
 [Presentation]: ./presentation/Intro_to_Golang.pdf
-[Lab-0]: ./Labs/lab-0.md
-[Lab-1]: ./Labs/lab-1.md
-[Lab-2]: ./Labs/lab-2.md
-[Lab-3]: ./Labs/lab-3.md
-[Lab-4]: ./Labs/lab-4.md
+[Lab-0-Prerequisites]: ./Labs/lab-0.md
+[Lab-1-Basic-Go-App]: ./Labs/lab-1.md
+[Lab-2-Lets-Get-RESTful]: ./Labs/lab-2.md
+[Lab-3-Up-In-The-Cloud]: ./Labs/lab-3.md
+[Lab-4-Tweet-Tweet]: ./Labs/lab-4.md
