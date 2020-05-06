@@ -19,7 +19,7 @@ This workshop will show you how to build a simple Golang application and then de
 - [Lab-3-Up-In-The-Cloud]
 - [Lab-4-Tweet-Tweet]
 
-[Presentation]: ./presentation/Intro_to_Golang.pdf
+[Presentation]: ./Presentation/Intro_to_Golang.pdf
 [Lab-0-Prerequisites]: ./Labs/lab-0.md
 [Lab-1-Basic-Go-App]: ./Labs/lab-1.md
 [Lab-2-Lets-Get-RESTful]: ./Labs/lab-2.md

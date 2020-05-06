@@ -118,7 +118,7 @@ func TweetHandler(w http.ResponseWriter, r *http.Request) {
         logr.Error(err)
     }
 
-    tweet, resp, err := client.Statuses.Update("Todays dad joke is: "+dadJoke, nil)
+    tweet, resp, err := client.Statuses.Update(dadJoke, nil)
     if err != nil {
         logr.Error(err)
     }
