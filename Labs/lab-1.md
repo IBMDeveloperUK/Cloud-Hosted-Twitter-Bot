@@ -6,8 +6,8 @@ In this very first Lab you will clone the repository of the project to make the 
 
 1. Fork this repository and then clone your personal copy into `$HOME/<user>/go/github.com` on your machine.
 ![fork repository](./../images/ForkRepo.png)
-1. open the project directory into your preferred editor. (I use [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go) installed from the marketplace).
-2. You will be using the Go Modules to manage imports in this workshop so in the terminal, navigate into the project directory and initialise it. To do this enter the follow commands:
+2. Open the project directory into your preferred editor. (I use [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go) installed from the marketplace).
+3. You will be using the Go Modules to manage imports in this workshop so in the terminal, navigate into the project directory and initialise it. To do this enter the follow commands:
 
 ```bash
 go mod init

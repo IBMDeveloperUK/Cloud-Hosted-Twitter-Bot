@@ -1,6 +1,6 @@
 # Lab 0 - Install the Prerequisites
 
-## Golang Installation
+## 1. Golang Installation
 
 ### Automated Installation \(**Ubuntu 16.04+ & macOS only**\)
 
@@ -49,13 +49,13 @@ mkdir $HOME/go/src/github.com
 
 ---
 
-## IBM Cloud account registration
+## 2. IBM Cloud account registration
 
 Login or create an [IBM Cloud](https://cloud.ibm.com/login) account
 
 ---
 
-## IBM Cloud command line interface installation
+## 3. IBM Cloud command line interface installation
 
 (If you already have these setup and installed, go straight to [Lab 1](./lab-1.md) // FIX THIS LINK
 
@@ -67,5 +67,19 @@ Login or create an [IBM Cloud](https://cloud.ibm.com/login) account
 3. Enter your IBM Cloud credentials when prompted.
 
 > **Note**: If you have a federated ID, use `ibmcloud login --sso` to log in to the IBM Cloud CLI. Enter your user name, and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+
+---
+
+## 4. Create a Twitter account
+
+---
+
+## 5. IDE
+[Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go). When you begin to code Go inside VSCode you may be prompted to install a bunch of extnesions. These are good and will help make development much easier!
+
+OR
+
+[Jet Brains GoLand](https://www.jetbrains.com/go/download/#section=mac) (GoLand isn't free but it does have a 30 day free trial)
+
 
 Once you are all set up you can move straight on to [Lab 1](./lab-1.md)

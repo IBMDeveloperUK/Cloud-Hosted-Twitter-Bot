@@ -5,9 +5,10 @@ This workshop will show you how to build a simple Golang application and then de
 ## Prerequisites
 
 1. Golang system environment
-2. IBM Cloud account + IBM Cloud command line interface
-3. A [Twitter account](https://twitter.com/?login)
-4. An IDE installed (Visual Studio Code/GoLand/Sublime Text etc)
+2. IBM Cloud account
+3. IBM Cloud command line interface
+4. A Twitter account
+5. An IDE installed - Visual Studio Code + Go extension or JetBrains GoLand work best for Go development
 
 ---
 
