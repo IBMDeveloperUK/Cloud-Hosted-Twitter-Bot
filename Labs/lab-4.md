@@ -4,9 +4,33 @@ In this lab, you will look at transforming the web app into a twitter bot. To co
 
 ### Step 1
 
-If you haven't already, please send over your twitter handle!
+If you haven't already, please send over your twitter handle and accept the email invitation sent to the email address on your twitter account.
 
-Go to the [Twitter Developer Dashboard](https://developer.twitter.com/en/apps) and create an app. This will become your instance of the twitter bot and will give you access to the API keys.
+Go to the [Twitter Developer Dashboard](https://developer.twitter.com/en/apps) and create an app. This will become your instance of the twitter bot and will give you access to the API keys. To do this, click on the link and follow these simple steps:
+
+Create a new app
+![create-an-app](../images/CreateAnApp.png)
+
+Fill in the forms required fields using the following information
+
+Website to be used: "https://github.com/IBMDeveloperUK/cloud-hosted-twitter-bot-workshop"
+
+Application descrition: "An app allowing the connection of a twitter bot"
+![fill-out-form](./../images/AppDetailsForm.png)
+
+Scroll to the bottom and copy+paste this text into the usage box:
+
+"The intention of this new app is to connect a Golang Twitter bot through the Twitter API. This is part of a Golang workshop being run by the IBM Developer UKI team."
+![fill-out-form](./../images/HowToBeUsed.png)
+
+Accept the T&Cs
+![t&cs](./../images/T&Cs.png)
+
+Once created, navigate to the "Keys and token" tab
+![app-details](./../images/AppDetails.png)
+
+You will see your public keys (the screenshot ones below have been blanked out) and you will need to generate your private keys by clicking on "Generate" **MAKE A NOTE OF THESE**
+![keys-and-token](./../images/KeysAndTokens.jpg)
 
 ### Step 2
 
@@ -113,7 +137,7 @@ r.HandleFunc("/tweetjoke", TweetHandler)
 Because the `twitter_auth` is within its own package you will also need to add it to your imports. This will be a relative path to the file on your machine. For example:
 
 ```go
-twitter_auth "github.com/IBMDeveloperUK/twitter-bot-ws/pkg/twitter_auth"
+twitter_auth "github.com/cloud-hosted-twitter-bot-workshop/pkg/twitter_auth"
 ```
 
 > **Note**: It is important to keep the `twitter_auth`prefix to prevent it interfering with other declarations of the twitter API package within the code
@@ -141,19 +165,17 @@ This will take you to your resources list. Click on your twitter-bot resource
 
 ![IBM Cloud Resource List](../images/IBMCloudResourceList.png)
 
-Once within your application, go to the runtime section which can be found in the left side menu
+Once within your application, go to the runtime section which can be found in the left side menu and click on the heading `Environment variables`
 
 ![Resouce Overview](../images/ResourceOverview.png)
 
-Click on the heading `Environment variables`
-
-![Env Var Overview](../images/EnvVarOverview.png)
-
-Scroll down to the application variables, add your `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`, `CONSUMER_KEY`, `CONSUMER_SECRET` from Twitter and save the configuration. These can be found in your [Twitter Developer Dashboard](https://developer.twitter.com/en/apps)
+Add your `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`, `CONSUMER_KEY`, `CONSUMER_SECRET` from Twitter and save the configuration. These can be found in your app on your [Twitter Developer Dashboard](https://developer.twitter.com/en/apps)
 
 ![Add Env Vars](../images/AddEnvVars.png)
 
-Now these have been saved, your application will have access to them. Lets try it out?
+Now these have been saved, your application will have authentication. 
+
+Lets try it out?
 
 Click on the "Visit App URL" and append `/tweetjoke` to the end of the URL. This will tweet a random joke and you can check this by looking on your twitter feed!
 
