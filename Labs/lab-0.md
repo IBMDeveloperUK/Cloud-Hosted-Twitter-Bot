@@ -1,6 +1,61 @@
 # Lab 0 - Install the Prerequisites
 
-### IBM Cloud command line interface
+## Golang Installation
+
+### Automated Installation \(**Ubuntu 16.04+ & macOS only**\)
+
+Use [this open source repository](https://github.com/canha/golang-tools-install-script) to install Golang onto your machine.
+
+Ubuntu 16.04+
+
+```bash
+wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
+| bash -s -- --version 1.14.1
+```
+
+macOS
+
+```bash
+brew install go
+```
+
+or
+
+```bash
+curl https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
+| bash -s -- --version 1.14.1
+```
+
+Once the installation has finished, create a folder called `github.com` inside `$HOME/go/src`. Copy and paste the following command to do this for you.
+
+```bash
+mkdir $HOME/go/src/github.com
+```
+
+### Manual Installation
+
+1. To manually install the Go tools, use the [Go documentation](https://golang.org/doc/install) and follow the instructions 
+2. Ensure your system follows the folder tree below
+
+```bash
+.
+├── $HOME
+│   ├── /go
+│        ├── /bin
+│        ├── /pkg
+│        └── /src
+│             └── /github.com
+```
+
+---
+
+## IBM Cloud account registration
+
+Login or create an [IBM Cloud](https://cloud.ibm.com/login) account
+
+---
+
+## IBM Cloud command line interface installation
 
 (If you already have these setup and installed, go straight to [Lab 1](./lab-1.md) // FIX THIS LINK
 
