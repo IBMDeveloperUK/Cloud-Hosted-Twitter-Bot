@@ -2,40 +2,46 @@
 
 ## 1. Golang Installation
 
-### Automated Installation \(**Ubuntu 16.04+ & macOS only**\)
-
-Use [this open source repository](https://github.com/canha/golang-tools-install-script) to install Golang onto your machine.
-
-Ubuntu 16.04+
+### Ubuntu 16.04+
+The following `wget` command makes use of [this open source repository](https://github.com/canha/golang-tools-install-script) to install Golang onto your machine and configure the environment.
 
 ```bash
 wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
 | bash -s -- --version 1.14.2
 ```
 
-macOS
-
-```bash
-brew install go
-```
-
 or
+
+Follow this [quick installation](https://medium.com/better-programming/install-go-1-11-on-ubuntu-18-04-16-04-lts-8c098c503c5f) guide. Making sure you change `1.11` -> `1.14.2` (This should also work on Ubuntu 20.04)
+
+### macOS
+
+The following `curl` commands make use of [this open source repository](https://github.com/canha/golang-tools-install-script) to install Golang onto your machine and configure the environment.
 
 ```bash
 curl https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
 | bash -s -- --version 1.14.2
 ```
 
-Once the installation has finished, create a folder called `github.com` inside `$HOME/go/src`. Copy and paste the following command to do this for you.
+or
+
+Follow this short [installation guide](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go) up the end of the section "Go Environment".
+
+### Windows / Manual Installation
+
+To manually install the Go tools, use the official [Go documentation](https://golang.org/doc/install) and follow the instructions.
+
+> **Note**: A quick Windows setup guide can be found [here](https://www.geeksforgeeks.org/how-to-install-go-on-windows/)
+
+### Check your version
+
+In your terminal, check your go version by using the following command
 
 ```bash
-mkdir $HOME/go/src/github.com
+go version
 ```
 
-### Manual Installation
-
-1. To manually install the Go tools, use the [Go documentation](https://golang.org/doc/install) and follow the instructions 
-2. Ensure your system follows the folder tree below
+Once Go is installed via which ever method you have chosen, it is **important** to ensure your system follows the folder tree shown below:
 
 ```bash
 .
@@ -77,11 +83,11 @@ Login or create a [Twitter account](https://twitter.com/?login)
 ---
 
 ## 5. IDE
+
 [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go). When you begin to code Go inside VSCode you may be prompted to install a bunch of extnesions. These are good and will help make development much easier!
 
 OR
 
 [Jet Brains GoLand](https://www.jetbrains.com/go/download/#section=mac) (GoLand isn't free but it does have a 30 day free trial)
-
 
 Once you are all set up you can move straight on to [Lab 1](./lab-1.md)
