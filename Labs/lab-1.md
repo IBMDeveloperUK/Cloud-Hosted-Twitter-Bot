@@ -28,7 +28,7 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hello Fellow Gopher")
+    fmt.Println("Hello Fellow Gopher!")
 }
 ```
 

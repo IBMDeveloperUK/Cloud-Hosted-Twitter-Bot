@@ -38,7 +38,7 @@ Now you have got a route handler, you need to create the web server to invoke it
     logr.Error(http.ListenAndServe(":8080", nil))
 ```
 
-> **Note**: If your plugin didn't already add the gorilla mux import, add the following line of code into your imports
+> **Note**: If your plugin didn't add the gorilla mux import automatically, add the following line of code into your imports
 
 ```golang
 "github.com/gorilla/mux"

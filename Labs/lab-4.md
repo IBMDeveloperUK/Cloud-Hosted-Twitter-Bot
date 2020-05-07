@@ -141,7 +141,7 @@ Once the new function has been added, in your `main()` function add the followin
 r.HandleFunc("/tweetjoke", TweetHandler)
 ```
 
-Because the `twitter_auth` is within its own package you will also need to add it to your imports. This will be a relative path to the file on your machine. For example:
+Because the `twitter_auth` is its own separate package you will also need to add it to your imports. This will be a relative path to the file on your machine. For example, it should look something like:
 
 ```go
 twitter_auth "github.com/cloud-hosted-twitter-bot-workshop/pkg/twitter_auth"
@@ -186,9 +186,10 @@ Lets try it out?
 
 Click on the "Visit App URL" and append `/tweetjoke` to the end of the URL. This will tweet a random joke and you can check this by looking on your twitter feed!
 
-### Finished? Feeling brave and want some more? Try these next step with less help :wink:
+### Finished? Want some more? Try these next steps with less help :wink:
 
-1. Create a route handler that will search for a given key term and display the output.
+1. Create a route handler that will use the twitter API to search for a given key term and display the output.
 
 2. Fancy a different deployment method? Try deploying the application into a Kubernetes cluster on IBM Cloud. (Hint: There is another workshop to assist with this - be careful with environment variables though!)
 
+If you want to complete this lab by yourself in your own time, you can do so by applying for a personal [Twitter Developer Account](https://developer.twitter.com/en/apply-for-access) and following the same process explained in this workshop.
