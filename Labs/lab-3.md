@@ -41,7 +41,7 @@ First you need to prepare your application for Cloud Foundary. To do this, in th
 ```yaml
 ---
 applications:
-- name: <name of your app as it appears in IBM Cloud> e.g Twitter-Joke-Bot
+- name: <name of your app as it will appear in IBM Cloud> e.g Twitter-Joke-Bot
   random-route: true
   memory: 128M
   env:
@@ -50,7 +50,7 @@ applications:
 
 ## Step 3
 
-In a terminal window, from within your project directory \(`/go/src/github.com/<projectname>`\), you are going to login to your IBM Cloud account, target Cloud Foundary and then push your application up. To do this, follow the simple steps that follow:
+In a terminal window, from within your project directory (`./go/src/github.com/<projectname>`), you are going to login to your IBM Cloud account, target Cloud Foundary and then push your application up. To do this, follow the simple steps that follow:
 
 1. Make sure you are logged into IBM Cloud via the CLI: `ibmcloud login`
 
