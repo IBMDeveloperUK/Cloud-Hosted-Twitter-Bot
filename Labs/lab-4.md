@@ -61,7 +61,7 @@ type Credentials struct {
 }
 
 func GetCredentials() Credentials {
-    // Populating the struct
+    // Populating the struct - value semantic construction
     creds := Credentials{
         AccessToken:       os.Getenv("ACCESS_TOKEN"),
         AccessTokenSecret: os.Getenv("ACCESS_TOKEN_SECRET"),
@@ -162,31 +162,45 @@ ibmcloud cf push
 
 ### Step 4
 
-Once the application is in Cloud Foundary you will need to add the API keys to the environment variables - this can be completed in the UI and it is really easy!
+Once the application is in Cloud Foundary you will need to add the API keys to the environment variables - this can be completed in the CLI and it is really easy!
 
-On your IBM Cloud dashboard navigate to your Cloud Foundary apps and click on it
+In your terminal window you need to run a simple command for each key:
 
-![IBM Cloud Dash](../images/IBMCloudDash.png)
+```bash
+ibmcloud cf set-env APP_NAME ENV_VAR_NAME ENV_VAR_VALUE
+```
 
-This will take you to your resources list. Click on your twitter-bot resource
+For example:
 
-![IBM Cloud Resource List](../images/IBMCloudResourceList.png)
+```bash
+ibmcloud cf set-env Twitter-Joke-Bot API_KEY abc123
+```
 
-Once within your application, go to the runtime section which can be found in the left side menu and click on the heading `Environment variables`
+You will need to run this command for each of the 4 keys:
+ - API_KEY
+ - API_SECRET_KEY
+ - ACCESS_TOKEN
+ - ACCESS_TOKEN_SECRET
 
-![Resouce Overview](../images/ResourceOverview.png)
+The values for these can be found in your app on your [Twitter Developer Dashboard](https://developer.twitter.com/en/apps) as shown in Step 1
 
-Add your `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`, `CONSUMER_KEY`, `CONSUMER_SECRET` from Twitter and save the configuration. These can be found in your app on your [Twitter Developer Dashboard](https://developer.twitter.com/en/apps)
+After adding the environment variables, you may be prompted to restage your application to ensure these have taken effect. To do this, run the following command:
 
-![Add Env Vars](../images/AddEnvVars.png)
+```bash
+ibmcloud cf restage <app-name>
+```
 
-Now these have been saved, your application will have authentication. 
+Now your application has been restaged, it will have access to the environment variables, allowing it to authenticate with the Twitter API.
+
+### Step 5
 
 Lets try it out?
 
-Click on the "Visit App URL" and append `/tweetjoke` to the end of the URL. This will tweet a random joke and you can check this by looking on your twitter feed!
+Just like in Lab 3, using your application route in a browser but this time replace `/showjoke` with `/tweetjoke`
 
-### Finished? Want some more? Try these next steps with less help :wink:
+This will tweet a random joke from the first API and you can check this by looking on your twitter feed!
+
+### What next? Want some more? Try these next steps with less help :wink:
 
 1. Create a route handler that will use the twitter API to search for a given key term and display the output.
 
