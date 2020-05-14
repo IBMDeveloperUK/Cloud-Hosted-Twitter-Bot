@@ -36,51 +36,23 @@ iex(New-Object Net.WebClient).DownloadString('https://clis.cloud.ibm.com/install
 
 ## Step 2
 
-The following screenshots illustrate how to set up a Cloud Foundary application in IBM Cloud. Follow these simple steps to get a resource up and running.
-
-Login to IBM Cloud \(or create an account if you still havent done so\)
-
-![IBM Cloud Login](../images/IBMCloudLogin.png)
-
-Navigate to the hamburger menu in the top left of the window and select "Cloud Foundary" from the menu
-
-![IBM Cloud Left Panel](../images/IBMCloudLeftPan.png)
-
-Create a public application
-
-![Create Public Application](../images/CreatePublicApp.png)
-
-Scroll down a little bit and make sure the Go runtime is selected. Once it is selected, fill in the detail boxes shown below, indicated with a red arrow. The rest will auto-fill as you type or already be populated with text. The hostname and domain can be left with the defaults already populated.
-
-![CF App Details 1](../images/CFAppDetails1.png)
-
-**Do not be alarmed at the pricing plan, you will not be exceeding the free allowance with this workshop. "First 186 GB-Hour's free per month for one or more applications built using any of the Community runtimes."**
-
-Once all the fields are completed, click create
-
-![CF APP Details 2](../images/CFAppDetails2.png)
-
-> **Note**: The app could take a minute or two to start up so be patient :wink:
-
-## Step 3
-
-You now need to prepare your application for Cloud Foundary. To do this, in the root directory of your project create a file called `manifest.yml`. This will be the building blocks for your application when pushing it up to the cloud. Inside this add the following code. **Be sure to change the commented code!**
+First you need to prepare your application for Cloud Foundary. To do this, in the root directory of your project you will find a file called `manifest.yml`. This will be the building blocks for your application when pushing it up to the cloud. Inside this file add the following code. **Be sure to change the commented code!**
 
 ```yaml
 ---
 applications:
-- name: <name of your app as it appears in IBM Cloud> e.g Twitter-Joke-Bot
+- name: <name of your app as it will appear in IBM Cloud> e.g Twitter-Joke-Bot
   random-route: true
   memory: 128M
   env:
     GO_INSTALL_PACKAGE_SPEC: <path to your main.go file on your system> e.g github.com/cloud-hosted-twitter-bot-workshop/cmd
 ```
 
-## Step 4
+## Step 3
 
-In a terminal window, from within your project directory \(`$HOME/go/src/github.com/<projectname>`\), you are going to login to your IBM Cloud account, target Cloud Foundary and then push your application up. To do this, follow the simple steps that follow:
+In a terminal window, from within your project directory (`./go/src/github.com/<projectname>`), you are going to login to your IBM Cloud account, target Cloud Foundary and then push your application up. To do this, follow the simple steps that follow:
 
-1. Make sure you are logged into to the IBM Cloud via the CLI: `ibmcloud login`
+1. Make sure you are logged into IBM Cloud via the CLI: `ibmcloud login`
 
 > **Note**: If you have a federated ID, use `ibmcloud login --sso` to log in to the IBM Cloud CLI. Enter your user name, and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the --sso and succeeds with the --sso option.
 
@@ -88,9 +60,29 @@ In a terminal window, from within your project directory \(`$HOME/go/src/github.
 3. Target Cloud Foundary with IBM Cloud by using: `ibmcloud target --cf`
 4. Push your app into Cloud Foundary: `ibmcloud cf push`
 
-If the push is successful, your application will be created and you should see it running in the UI after a minute or two :clap:
+If the push is successful, your application will be created and you should see the following output (or something very similar) :clap:
 
-To see your application running and have it output a joke, go to the main resource page and click on the `Visit App URL`. At the end of the URL append the route you created `/showjoke`
+```bash
+Waiting for app to start...
+
+name:              Twitter-Joke-Bot
+requested state:   started
+routes:            twitter-joke-bot-persistent-hippopotamus.eu-gb.mybluemix.net
+last uploaded:     Thu 14 May 10:30:50 BST 2020
+stack:             cflinuxfs3
+buildpacks:        go
+
+type:            web
+instances:       1/1
+memory usage:    128M
+start command:   ./bin/cmd
+     state     since                  cpu    memory      disk      details
+#0   running   2020-05-14T09:31:04Z   0.0%   0 of 128M   0 of 1G   
+```
+
+To see your application running and have it output a joke, copy and paste the `routes` value from your output into a browser address bar and append `/showjoke` onto the end of it. 
+
+Example: `twitter-joke-bot-persistent-hippopotamus.eu-gb.mybluemix.net/showjoke`
 
 ![Running App URL](./../images/RunningAppURL.png)
 
