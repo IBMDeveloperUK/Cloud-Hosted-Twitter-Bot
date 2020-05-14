@@ -54,8 +54,8 @@ import (
 
 // Credentials struct contains API credentials pulled from env vars:
 type Credentials struct {
-    ConsumerKey       string
-    ConsumerSecret    string
+    ApiKey       string
+    ApiSecretKey    string
     AccessToken       string
     AccessTokenSecret string
 }
@@ -63,10 +63,10 @@ type Credentials struct {
 func GetCredentials() Credentials {
     // Populating the struct - value semantic construction
     creds := Credentials{
+        ApiKey:       os.Getenv("API_KEY"),
+        ApiSecretKey:    os.Getenv("API_SECRET_KEY"),
         AccessToken:       os.Getenv("ACCESS_TOKEN"),
         AccessTokenSecret: os.Getenv("ACCESS_TOKEN_SECRET"),
-        ConsumerKey:       os.Getenv("CONSUMER_KEY"),
-        ConsumerSecret:    os.Getenv("CONSUMER_SECRET"),
     }
     return creds
 }
@@ -78,7 +78,7 @@ Return = client, error
 func GetUserClient(creds *Credentials) (*twitter.Client, error) {
 
     // create a new config & token from creds
-    config := oauth1.NewConfig(creds.ConsumerKey, creds.ConsumerSecret)
+    config := oauth1.NewConfig(creds.ApiKey, creds.ApiSecretKey)
     token := oauth1.NewToken(creds.AccessToken, creds.AccessTokenSecret)
 
     // create a new http client
