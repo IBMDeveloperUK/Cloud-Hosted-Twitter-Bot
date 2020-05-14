@@ -53,6 +53,8 @@ Once Go is installed via which ever method you have chosen, it is **important** 
 │             └── /github.com
 ```
 
+If you are using a Windows machine and have installed Golang by using the `gox.x.x.windows-amd64.msi` official executable, you may have extra files in the directories. Just ensure the paths above also exist.
+
 ---
 
 ## 2. IBM Cloud account registration
@@ -61,9 +63,9 @@ Login or create an [IBM Cloud](https://cloud.ibm.com/login) account
 
 ---
 
-## 3. IBM Cloud command line interface installation
+## 3. IBM Cloud & Cloud Foundary command-line interface installation
 
-(If you already have these setup and installed, go straight to [Lab 1](./lab-1.md) // FIX THIS LINK
+(If you already have these setup and installed, go straight to [Lab 1](./lab-1.md)
 
 1. Install the [IBM Cloud command-line interface from this link](https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli).
 
@@ -73,6 +75,8 @@ Login or create an [IBM Cloud](https://cloud.ibm.com/login) account
 3. Enter your IBM Cloud credentials when prompted.
 
 > **Note**: If you have a federated ID, use `ibmcloud login --sso` to log in to the IBM Cloud CLI. Enter your user name, and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
+
+4. Install the IBM Cloud Foundary command-line interface with the command `ibmcloud cf install`
 
 ---
 
