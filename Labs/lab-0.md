@@ -90,6 +90,12 @@ Login or create a [Twitter account](https://twitter.com/?login)
 
 [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go). When you begin to code Go inside VSCode you may be prompted to install a bunch of extnesions. These are good and will help make development much easier!
 
+If you are using this option, to make development easier a suggestion is to amend the imports setting on the extension once you have installed it. This will help delete unused imports and add them in when needed, resulting in less ambiguous errors. To do this follow the 2 quick steps below:
+
+![Go Extension](../images/GoExtension.png)
+
+![Format Imports](../images/FormatImports.png)
+
 OR
 
 [Jet Brains GoLand](https://www.jetbrains.com/go/download/#section=mac) (GoLand isn't free but it does have a 30 day free trial)
