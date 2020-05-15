@@ -8,7 +8,7 @@ Before you can complete any of the next steps, you must either [sign up](https:/
 
 ### Step 1
 
-Install the [ibmcloud cli tool](https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli#shell_install) with the following commands. With this you can access IBM Cloud from your command-line with the prefix `ibmcloud`.
+First you need to ensure you have installed the [ibmcloud cli tool](https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli#shell_install). If you haven't already done this, you can use do so with the following commands. With this you can access IBM Cloud from your command-line with the prefix `ibmcloud`.
 
 Mac
 
@@ -32,6 +32,12 @@ iex(New-Object Net.WebClient).DownloadString('https://clis.cloud.ibm.com/install
 
 ```bash
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+```
+
+Secondly, you will need to ensure you have got the Cloud Foundary CLI installed. If you haven't already got this, you can do so with the following command:
+
+```bash
+ibmcloud cf install
 ```
 
 ## Step 2

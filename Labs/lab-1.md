@@ -12,8 +12,10 @@ In this very first Lab you will clone the repository of the project to make the 
 ```bash
 go mod init
 ```
+
+If you are on Windows, you may asked to enter the project directory you wish to initialise. If so, the following _should_ work provding you are following the folder structure outlined in [Lab 0](./lab-0.md) and you have not changed the project name after cloning the repository.
 ```bash
-go mod tidy
+go mod init github.com/cloud-hosted-twitter-bot-workshop
 ```
 
 ### Step 2

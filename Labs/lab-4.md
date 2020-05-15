@@ -144,13 +144,12 @@ r.HandleFunc("/tweetjoke", TweetHandler)
 Because the `twitter_auth` is its own separate package you will also need to add it to your imports. This will be a relative path to the file on your machine. For example, it should look something like:
 
 ```go
-twitter_auth "github.com/cloud-hosted-twitter-bot-workshop/pkg/twitter_auth"
+"github.com/cloud-hosted-twitter-bot-workshop/pkg/twitter_auth"
 ```
 
-> **Note**: It is important to keep the `twitter_auth`prefix to prevent it interfering with other declarations of the twitter API package within the code
+Test it compiles by running the application locally `go run cmd/main.go` (don't attempt to hit the new route just yet as it will attempt to tweet and fail)
 
-1. Test it compiles by running the application locally `go run cmd/main.go` (don't attempt to hit the new route just yet as it will attempt to tweet and fail)
-2. If it compiles successfully, push it up to the cloud where you are hosting it.
+If it compiles successfully, terminate the application and push it up to the cloud where you are hosting it.
 
 ### Step 3
 
@@ -184,7 +183,7 @@ You will need to run this command for each of the 4 keys:
 
 The values for these can be found in your app on your [Twitter Developer Dashboard](https://developer.twitter.com/en/apps) as shown in Step 1
 
-After adding the environment variables, you may be prompted to restage your application to ensure these have taken effect. To do this, run the following command:
+After adding the environment variables, you _may_ be prompted to restage your application to ensure these have taken effect. To do this, run the following command:
 
 ```bash
 ibmcloud cf restage <app-name>
