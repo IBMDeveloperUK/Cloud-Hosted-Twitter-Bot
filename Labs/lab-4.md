@@ -42,7 +42,7 @@ Now you have created an app in Twitter, lets code the server :beers:
 4. The first thing you need to do is authenticate with twitter and connect to the app you created. To do this, read and add the following code to this file:
 
 ```go
-package twitterauth
+package twitter_auth
 
 import (
     "os"
