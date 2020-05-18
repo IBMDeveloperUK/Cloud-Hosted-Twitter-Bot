@@ -153,7 +153,7 @@ If it compiles successfully, terminate the application and push it up to the clo
 
 ### Step 3
 
-Ensure everything is saved and then from your projects root directory enter the following command to re-push the application up to Cloud Foundary:
+Ensure everything is saved and then from your projects root directory enter the following command to re-push the application up to Cloud Foundry:
 
 ```bash
 ibmcloud cf push
@@ -161,7 +161,7 @@ ibmcloud cf push
 
 ### Step 4
 
-Once the application is in Cloud Foundary you will need to add the API keys to the environment variables - this can be completed in the CLI and it is really easy!
+Once the application is in Cloud Foundry you will need to add the API keys to the environment variables - this can be completed in the CLI and it is really easy!
 
 In your terminal window you need to run a simple command for each key:
 
