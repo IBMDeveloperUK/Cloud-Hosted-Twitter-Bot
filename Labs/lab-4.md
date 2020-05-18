@@ -138,10 +138,10 @@ func TweetHandler(w http.ResponseWriter, r *http.Request) {
 Once the new function has been added, in your `main()` function add the following line, just like you did before with the `jokeHandler`:
 
 ```go
-r.HandleFunc("/tweetjoke", TweetHandler)
+http.HandleFunc("/tweetjoke", TweetHandler)
 ```
 
-Because the `twitter_auth` is its own separate package you will also need to add it to your imports. This will be a relative path to the file on your machine. For example, it should look something like:
+Because the `twitter_auth` is its own separate package you will also need to add it to your imports in your `main.go` file. This will be a relative path to the file on your machine. For example, it should look something like:
 
 ```go
 "github.com/cloud-hosted-twitter-bot-workshop/pkg/twitter_auth"

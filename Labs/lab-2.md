@@ -1,6 +1,6 @@
 # Lab 2 - Lets get RESTful :dancer: 
 
-In this lab you are going to create a web app with some routes. To do this you will use the 3rd party import `gorilla/mux`. Some bedtime reading about this can be found [here](https://github.com/gorilla/mux). You will then extend this to output a random joke by calling an open API without the need for authentication. The API in this lab is a random dad joke API but feel free to explore and chose another if you'd like, the principals are the same!
+In this lab you are going to create a web app with some routes. To do this you will use the `net/http` library. You will then extend this to output a random joke by calling an open API without the need for authentication. The API in this lab is a random dad joke API but feel free to explore and chose another if you'd like, the principals are the same!
 
 ### Step 1
 
@@ -26,22 +26,13 @@ import (
 
 ### Step 2
 
-Now you have got a route handler, you need to create the web server to invoke it. To do this, use the code snippet below and insert it into your `main()` function. Instead of using the standard go `net/http` library's you will use a more powerful 3rd party import, `gorilla mux`.
+Now you have got a route handler, you need to create the web server to invoke it. To do this, use the code snippet below and insert it into your `main()` function. You will be using the standard `net/http` library and this demonstrates just how easy it is to spin one up in Golang!
 
 ```golang
 // Create Server and Route Handlers
-    r := mux.NewRouter()
-    r.HandleFunc("/", handler)
-
-    http.Handle("/", r)
-    logr.Info("Starting up on 8080")
-    logr.Error(http.ListenAndServe(":8080", nil))
-```
-
-> **Note**: If your plugin didn't add the gorilla mux import automatically, add the following line of code into your imports
-
-```golang
-"github.com/gorilla/mux"
+http.HandleFunc("/", handler)
+logr.Info("Starting up on 8080")
+logr.Error(http.ListenAndServe(":8080", nil))
 ```
 
 ### Step 3
@@ -116,7 +107,7 @@ func jokeHandler(w http.ResponseWriter, r *http.Request) {
 
 ```go
 // Add this line below the existing "/" route
-r.HandleFunc("/showjoke", jokeHandler)
+http.HandleFunc("/showjoke", jokeHandler)
 ```
 
 If you run the code and navigate to `localhost:8080/showjoke` in your browser you should be presented with a randomly generated joke!
