@@ -2,36 +2,31 @@
 
 ## 1. Golang Installation
 
+### macOS
+
+To manually install the Go tools, use the official [Go documentation](https://golang.org/doc/install) and follow the instructions.
+
+or
+
+Follow this short [installation guide](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go) up the end of the section "Go Environment" if you're using `brew`.
+
+### Windows
+
+To manually install the Go tools, use the official [Go documentation](https://golang.org/doc/install) and follow the instructions.
+
+> **Note**: A quick Windows setup guide can be found [here](https://www.geeksforgeeks.org/how-to-install-go-on-windows/)
+
 ### Ubuntu 16.04+
 The following `wget` command makes use of [this open source repository](https://github.com/canha/golang-tools-install-script) to install Golang onto your machine and configure the environment.
 
 ```bash
 wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
-| bash -s -- --version 1.14.2
+| bash -s -- --version 1.14.3
 ```
 
 or
 
-Follow this [quick installation](https://medium.com/better-programming/install-go-1-11-on-ubuntu-18-04-16-04-lts-8c098c503c5f) guide. Making sure you change `1.11` -> `1.14.2` (This should also work on Ubuntu 20.04)
-
-### macOS
-
-The following `curl` commands make use of [this open source repository](https://github.com/canha/golang-tools-install-script) to install Golang onto your machine and configure the environment.
-
-```bash
-curl https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh \
-| bash -s -- --version 1.14.2
-```
-
-or
-
-Follow this short [installation guide](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go) up the end of the section "Go Environment".
-
-### Windows / Manual Installation
-
-To manually install the Go tools, use the official [Go documentation](https://golang.org/doc/install) and follow the instructions.
-
-> **Note**: A quick Windows setup guide can be found [here](https://www.geeksforgeeks.org/how-to-install-go-on-windows/)
+Follow this [quick installation](https://medium.com/better-programming/install-go-1-11-on-ubuntu-18-04-16-04-lts-8c098c503c5f) guide. Making sure you change `1.11` -> `1.14.x` (This should also work on Ubuntu 20.04)
 
 ### Check your version
 
@@ -39,6 +34,12 @@ In your terminal, check your go version by using the following command
 
 ```bash
 go version
+```
+
+The output for this will will depend upon your system but we just care about the command running / showing the correct version. You should get the following output (or similar):
+
+```bash
+go version go1.14.3 darwin/amd64
 ```
 
 Once Go is installed via which ever method you have chosen, it is **important** to ensure your system follows the folder tree shown below:
