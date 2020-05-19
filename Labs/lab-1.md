@@ -4,16 +4,18 @@ In this very first Lab you will clone the repository of the project to make the 
 
 ### Step 1
 
-1. Fork this repository and then clone your personal copy into `$HOME/<user>/go/github.com` on your machine.
+1. Fork this repository to your own personal GitHub account
 ![fork repository](./../images/ForkRepo.png)
-2. Open the project directory into your preferred editor. (I use [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go) installed from the marketplace).
-3. You will be using the Go Modules to manage imports in this workshop so in the terminal, navigate into the project directory and initialise it. To do this enter the follow commands:
+2. Clone your personal copy of the repository into `$HOME/<user>/go/github.com` on your machine and then open the project in your preferred editor. I use [Visual Studio Code](https://code.visualstudio.com/) with the recommended [Go extension](https://code.visualstudio.com/docs/languages/go) installed from the marketplace.
+![clone repository](./../images/CloneRepository.png)
+![git clone](../images/GitClone.png)
+3. You will be using the Go Modules to manage imports in this workshop so in the terminal, ensure you are in the root of the project directory and initialise it. To do this enter the follow commands:
 
 ```bash
 go mod init
 ```
 
-If you are on Windows, you may asked to enter the project directory you wish to initialise. If so, the following _should_ work provding you are following the folder structure outlined in [Lab 0](./lab-0.md) and you have not changed the project name after cloning the repository.
+I some cases you may asked to enter the project directory you wish to initialise. If so, the following _should_ work provding you are following the folder structure outlined in [Lab 0](./lab-0.md) and you have not changed the project name after cloning the repository.
 ```bash
 go mod init github.com/cloud-hosted-twitter-bot-workshop
 ```

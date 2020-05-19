@@ -42,7 +42,7 @@ Now you have created an app in Twitter, lets code the server :beers:
 4. The first thing you need to do is authenticate with twitter and connect to the app you created. To do this, read and add the following code to this file:
 
 ```go
-package twitterauth
+package twitter_auth
 
 import (
     "os"
@@ -138,10 +138,10 @@ func TweetHandler(w http.ResponseWriter, r *http.Request) {
 Once the new function has been added, in your `main()` function add the following line, just like you did before with the `jokeHandler`:
 
 ```go
-r.HandleFunc("/tweetjoke", TweetHandler)
+http.HandleFunc("/tweetjoke", TweetHandler)
 ```
 
-Because the `twitter_auth` is its own separate package you will also need to add it to your imports. This will be a relative path to the file on your machine. For example, it should look something like:
+Because the `twitter_auth` is its own separate package you will also need to add it to your imports in your `main.go` file. This will be a relative path to the file on your machine. For example, it should look something like:
 
 ```go
 "github.com/cloud-hosted-twitter-bot-workshop/pkg/twitter_auth"
@@ -153,7 +153,7 @@ If it compiles successfully, terminate the application and push it up to the clo
 
 ### Step 3
 
-Ensure everything is saved and then from your projects root directory enter the following command to re-push the application up to Cloud Foundary:
+Ensure everything is saved and then from your projects root directory enter the following command to re-push the application up to Cloud Foundry:
 
 ```bash
 ibmcloud cf push
@@ -161,7 +161,7 @@ ibmcloud cf push
 
 ### Step 4
 
-Once the application is in Cloud Foundary you will need to add the API keys to the environment variables - this can be completed in the CLI and it is really easy!
+Once the application is in Cloud Foundry you will need to add the API keys to the environment variables - this can be completed in the CLI and it is really easy!
 
 In your terminal window you need to run a simple command for each key:
 
