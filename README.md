@@ -4,7 +4,7 @@ This workshop will show you how to build a simple Golang application and then de
 
 ## Prerequisites
 
-1. Golang system environment (v1.14.2)
+1. Golang system environment (v1.14.3)
 2. IBM Cloud account
 3. IBM Cloud command line interface
 4. A Twitter account - please send over your Twitter handle!
