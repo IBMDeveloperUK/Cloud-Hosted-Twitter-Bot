@@ -102,4 +102,11 @@ OR
 
 [Jet Brains GoLand](https://www.jetbrains.com/go/download/#section=mac) (GoLand isn't free but it does have a 30 day free trial)
 
+---
+
+## 6. GitHub account + git installation
+
+1. Visit [GitHub](https://github.com/login) to create an account
+2. To install `git` follow the [instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on the official `git` documentation.
+
 Once you are all set up you can move straight on to [Lab 1](./lab-1.md)
