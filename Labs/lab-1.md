@@ -15,7 +15,8 @@ In this very first Lab you will clone the repository of the project to make the 
 go mod init
 ```
 
-I some cases you may asked to enter the project directory you wish to initialise. If so, the following _should_ work provding you are following the folder structure outlined in [Lab 0](./lab-0.md) and you have not changed the project name after cloning the repository.
+In some cases you may be asked to enter the project directory you wish to initialise. If so, the following _should_ work providing you are following the folder structure outlined in [Lab 0](./lab-0.md) and you have not changed the project name after cloning the repository.
+
 ```bash
 go mod init github.com/cloud-hosted-twitter-bot-workshop
 ```
@@ -27,11 +28,14 @@ Lets start by making a simple `Hello-World` program.
 Open the `main.go` file, located in the `cmd` folder and add the code below:
 
 ```golang
+// Define the package - this will help maintain scope in your application
 package main
 
+// Define the fmt import for formatting
 import "fmt"
 
 func main() {
+    // Print a formatted string to the terminal
     fmt.Println("Hello Fellow Gopher!")
 }
 ```
