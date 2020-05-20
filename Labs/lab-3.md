@@ -42,7 +42,7 @@ ibmcloud cf install
 
 ## Step 2
 
-First you need to prepare your application for Cloud Foundry. To do this, in the root directory of your project you will find a file called `manifest.yml`. This will be the building blocks for your application when pushing it up to the cloud. Inside this file add the following code. **Be sure to change the commented code!**
+Now you need to prepare your application for Cloud Foundry. To do this, in the root directory of your project you will find a file called `manifest.yml`. This will be the building blocks for your application when pushing it up to the cloud. Inside this file add the following code. **Be sure to change the commented code!**
 
 ```yaml
 ---

@@ -9,34 +9,40 @@ If you haven't already, please send over your twitter handle and accept the emai
 Go to the [Twitter Developer Dashboard](https://developer.twitter.com/en/apps) and create an app. This will become your instance of the twitter bot and will give you access to the API keys. To do this, click on the link and follow these simple steps:
 
 Create a new app
+
 ![create-an-app](../images/CreateAnApp.png)
 
 Fill in the forms required fields using the following information
 
 Website to be used: "https://github.com/IBMDeveloperUK/cloud-hosted-twitter-bot-workshop"
 
-Application descrition: "An app allowing the connection of a twitter bot"
+Application description: "An app allowing the connection of a twitter bot"
+
 ![fill-out-form](./../images/AppDetailsForm.png)
 
 Scroll to the bottom and copy+paste this text into the usage box:
 
 "The intention of this new app is to connect a Golang Twitter bot through the Twitter API. This is part of a Golang workshop being run by the IBM Developer UKI team."
+
 ![fill-out-form](./../images/HowToBeUsed.png)
 
 Accept the T&Cs
+
 ![t&cs](./../images/T&Cs.png)
 
 Once created, navigate to the "Keys and token" tab
+
 ![app-details](./../images/AppDetails.png)
 
 You will see your public keys (the screenshot ones below have been blanked out) and you will need to generate your private keys by clicking on "Generate" **MAKE A NOTE OF THESE**
+
 ![keys-and-token](./../images/KeysAndTokens.jpg)
 
 ### Step 2
 
 Now you have created an app in Twitter, lets code the server :beers:
 
-1. Create a new folder called `pkg` in your root directory
+1. Create a new folder called `pkg` in your root directory of your project
 2. Inside this folder create another new folder and call it `twitter_auth`
 3. Inside your `twitter_auth` directory, create a file called `twitter_auth.go`
 4. The first thing you need to do is authenticate with twitter and connect to the app you created. To do this, read and add the following code to this file:
@@ -54,19 +60,19 @@ import (
 
 // Credentials struct contains API credentials pulled from env vars:
 type Credentials struct {
-    ApiKey       string
-    ApiSecretKey    string
-    AccessToken       string
-    AccessTokenSecret string
+    ApiKey              string
+    ApiSecretKey        string
+    AccessToken         string
+    AccessTokenSecret   string
 }
 
 func GetCredentials() Credentials {
     // Populating the struct - value semantic construction
     creds := Credentials{
-        ApiKey:       os.Getenv("API_KEY"),
-        ApiSecretKey:    os.Getenv("API_SECRET_KEY"),
-        AccessToken:       os.Getenv("ACCESS_TOKEN"),
-        AccessTokenSecret: os.Getenv("ACCESS_TOKEN_SECRET"),
+        ApiKey:             os.Getenv("API_KEY"),
+        ApiSecretKey:       os.Getenv("API_SECRET_KEY"),
+        AccessToken:        os.Getenv("ACCESS_TOKEN"),
+        AccessTokenSecret:  os.Getenv("ACCESS_TOKEN_SECRET"),
     }
     return creds
 }
@@ -105,6 +111,7 @@ func GetUserClient(creds *Credentials) (*twitter.Client, error) {
 Now that the authentication package has been created you need to call this from your `main.go` file and add another route handler. To do this start by adding a new function into your `main.go` file:
 
 ```go
+// TweetHandler executes logic to tweet a joke
 func TweetHandler(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     dadJoke, err := getJoke()
@@ -176,10 +183,14 @@ ibmcloud cf set-env Twitter-Joke-Bot API_KEY abc123
 ```
 
 You will need to run this command for each of the 4 keys:
- - API_KEY
- - API_SECRET_KEY
- - ACCESS_TOKEN
- - ACCESS_TOKEN_SECRET
+
+- API_KEY
+
+- API_SECRET_KEY
+
+- ACCESS_TOKEN
+
+- ACCESS_TOKEN_SECRET
 
 The values for these can be found in your app on your [Twitter Developer Dashboard](https://developer.twitter.com/en/apps) as shown in Step 1
 
@@ -204,5 +215,18 @@ This will tweet a random joke from the first API and you can check this by looki
 1. Create a route handler that will use the twitter API to search for a given key term and display the output.
 
 2. Fancy a different deployment method? Try deploying the application into a Kubernetes cluster on IBM Cloud. (Hint: There is another workshop to assist with this - be careful with environment variables though!)
+
+### Step 6 - Clean up
+
+Wahoo! You've completed the exercises and we hope you have a better understanding of Go!
+
+If you would like to clean up your application from IBM Cloud, use the following command inside your terminal:
+
+```bash
+ibmcloud cf delete <APP-NAME> -r
+```
+
+This will delete the deployed application and remove any mapped routes.
+
 
 If you want to complete this lab by yourself in your own time, you can do so by applying for a personal [Twitter Developer Account](https://developer.twitter.com/en/apply-for-access) and following the same process explained in this workshop.
