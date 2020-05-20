@@ -83,11 +83,11 @@ Return = client, error
 */
 func GetUserClient(creds *Credentials) (*twitter.Client, error) {
 
-    // create a new config & token from creds
+    // Create a new config & token using the data stored in 'creds'
     config := oauth1.NewConfig(creds.ApiKey, creds.ApiSecretKey)
     token := oauth1.NewToken(creds.AccessToken, creds.AccessTokenSecret)
 
-    // create a new http client
+    // Create a new http client
     httpClient := config.Client(oauth1.NoContext, token)
     client := twitter.NewClient(httpClient)
 
@@ -96,7 +96,7 @@ func GetUserClient(creds *Credentials) (*twitter.Client, error) {
         IncludeEmail: twitter.Bool(true),
     }
 
-    // verify the user
+    // Verify the user credentials
     user, _, err := client.Accounts.VerifyCredentials(verifyParams)
     if err != nil {
         logr.Error(err)
@@ -121,17 +121,17 @@ func TweetHandler(w http.ResponseWriter, r *http.Request) {
     }
     w.Write([]byte(fmt.Sprintf("The following joke will be tweeted, %s\n", dadJoke)))
 
-    // get twitter credentials
+    // Get twitter credentials from the twitter_auth package
     creds := twitter_auth.GetCredentials()
 
-    // build client
+    // Build client
     client, err := twitter_auth.GetUserClient(&creds)
     if err != nil {
         logr.Error("Error getting Twitter Client")
         logr.Error(err)
     }
 
-    // tweet the joke
+    // Tweet the joke by calling the function within client
     tweet, resp, err := client.Statuses.Update(dadJoke, nil)
     if err != nil {
         logr.Error(err)
@@ -156,7 +156,7 @@ Because the `twitter_auth` is its own separate package you will also need to add
 
 Test it compiles by running the application locally `go run cmd/main.go` (don't attempt to hit the new route just yet as it will attempt to tweet and fail)
 
-If it compiles successfully, terminate the application and push it up to the cloud where you are hosting it.
+If it compiles successfully, terminate the application and push it up to the cloud where you are hosting it (next step).
 
 ### Step 3
 
